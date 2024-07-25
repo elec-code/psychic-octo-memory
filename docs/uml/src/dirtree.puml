@@ -1,0 +1,45 @@
+@startuml dirtree
+skinparam defaultFontName "Fira Code","BIZ UDゴシック"
+salt
+{
+  {T
+    + ルートフォルダ
+      ++ ".env"| コードとテストコードのルートパスを揃えるための設定
+      ++ ".vscode"| vscode設定ファイルを格納
+        +++ XXXXXX.code-workspace| VS Codeプロジェクトファイル
+        +++ launch.json| デバッグ構成ファイル
+        +++ settings.json| 仮想環境のインタープリタを使用するように設定している
+        +++ tasks.json| 自動的に仮想環境に切り替えるビルドタスクを設定
+      ++ conf| アプリケーションの設定情報を格納(変更して使用するもの)
+        +++ config.yaml| オプション設定ファイル 
+        +++ errlog.yaml| モジュール別のlogging設定(書式、出力先、表示レベルを設定)
+      ++ docs| ドキュメントを格納
+        +++readme.md| 本ドキュメント
+        +++ uml| 図表の格納フォルダ
+          ++++ src| svg画像ファイルのplantumlソース格納フォルダ
+          ++++ svg| svg画像ファイルを格納するフォルダ
+      ++ io| アプリケーションの実行ログを格納
+        +++ input| 入力ファイルを格納する(フォルダのみ)
+        +++ log| 実行ログファイルを格納する
+        +++ output| 出力ファイルを格納する(フォルダのみ)
+      ++ src| スクリプトを格納
+        +++ main.py| メインモジュール
+        +++ util| 基本機能
+          ++++ getarg.py| argparseによる引数の解釈
+          ++++ ldconf.py| 設定ファイル(config.yaml)の読み込み
+          ++++ mnglog.py| ログファイルのセットアップ
+          ++++ rdtxtf.py| テキストファイルの読み込み
+          ++++ rmfile.py| ファイルの削除
+          ++++ version.py| バージョン情報
+      ++ tests| 単体テスト関係ファイル
+        +++ pytest.ini| 検査設定ファイル
+        +++ src:
+        ++++ util:
+          +++++ test_ldconf.py| ldconf.py 内関数のテストコード
+          +++++ test_mnglog.py| mnglog.py 内関数のテストコード
+          +++++ test_rmfile.py| rmfile.py 内関数のテストコード
+          +++++ test_rdtxtf.py| rdtxtf.py 内関数のテストコード
+          +++++ test_wrtxtf.py| wrtxtf.p y内関数のテストコード
+  }
+}
+@enduml
