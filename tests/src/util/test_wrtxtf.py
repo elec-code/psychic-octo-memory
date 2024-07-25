@@ -1,6 +1,9 @@
-import pytest
 from unittest.mock import patch, mock_open
 from util.wrtxtf import overwrite_textfile
+from unittest.mock import patch, mock_open
+
+from util.wrtxtf import overwrite_textfile
+
 
 def test_overwrite_textfile_success():
     """

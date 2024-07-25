@@ -1,7 +1,9 @@
-import pytest
 import sys
+
+import pytest
 from util.getarg import get_args
 from util.version import VERSION, RELEASE_DATE
+
 
 def mock_argv(*args):
     """ コマンドライン引数をモックするためのヘルパー関数 """

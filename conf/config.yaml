@@ -1,0 +1,3 @@
+version: 1
+io:
+  skip output file remove: False   # 古い出力ファイルの削除処理をスキップする

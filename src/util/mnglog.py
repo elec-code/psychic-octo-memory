@@ -12,8 +12,9 @@ import logging.config
 import os
 import shutil
 import sys
-import yaml
 from pathlib import Path
+
+import yaml
 
 # 定数(基本的に変更しない)
 LOG_DIR = r'..\io\log'         # errlog.yamlの内容と一致させる必要あり

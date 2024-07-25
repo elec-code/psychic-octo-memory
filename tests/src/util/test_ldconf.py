@@ -1,6 +1,8 @@
-import pytest
 from unittest.mock import patch, mock_open
+
+import pytest
 from util.ldconf import load_config
+
 
 @pytest.fixture
 def mock_logger():

@@ -1,6 +1,8 @@
+from unittest.mock import patch, mock_open
+
 import pytest
-from unittest.mock import patch, mock_open, MagicMock
-from util.mnglog import setup_logger, _rotate_logs, _setup_logger_sub, LOG_DIR, LOG_BASENAME, LOG_CONFIG_FILE, MAX_GENERATIONS
+from util.mnglog import LOG_DIR, LOG_BASENAME
+
 
 @pytest.fixture
 def mock_logger():

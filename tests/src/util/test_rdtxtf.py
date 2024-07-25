@@ -1,6 +1,9 @@
-import pytest
 from unittest.mock import patch, mock_open
 from util.rdtxtf import read_textfile
+from unittest.mock import patch, mock_open
+
+from util.rdtxtf import read_textfile
+
 
 def test_read_textfile_success():
     """

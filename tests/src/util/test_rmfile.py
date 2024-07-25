@@ -1,6 +1,9 @@
-import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from util.rmfile import remove_file  # 実際のモジュール名と関数名に合わせて変更してください
+from unittest.mock import patch
+
+from util.rmfile import remove_file  # 実際のモジュール名と関数名に合わせて変更してください
+
 
 @patch('os.path.isfile', return_value=True)
 @patch('os.remove')
