@@ -1,0 +1,38 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:   # 時刻なし
+    format:  '%(message)s'
+  detail:   # 時刻あり
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  file_handler:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detail
+    filename: '../io/log/error.log'  # 変更不可
+    encoding: 'utf8'
+    mode: 'w'
+root:       # ルートロガーの設定は変更しないこと
+  level: DEBUG
+  handlers: [console, file_handler]
+loggers:
+  __main__:
+    level: INFO
+    handlers: [console, file_handler]
+    propagate: no
+  util.rdtxtf:
+    level: INFO
+    handlers: [console, file_handler]
+    propagate: no
+  util.rmfile:
+    level: INFO
+    handlers: [console, file_handler]
+    propagate: no
+
+
